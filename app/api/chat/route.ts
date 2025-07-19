@@ -114,7 +114,7 @@ export async function POST(req: Request) {
   const systemPrompt = MEDICAL_SYSTEM_PROMPT.replace("{context}", medicalContext)
 
   const result = streamText({
-    model: groq("llama-3.1-70b-versatile"),
+    model: groq("llama-3.1-8b-instant"),
     system: systemPrompt,
     messages,
     temperature: 0.3, // Lower temperature for more consistent medical information
