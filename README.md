@@ -35,21 +35,21 @@ A comprehensive medical information chatbot built with Next.js, AI SDK, and Groq
 
 ## Technology Stack
 
-- **Frontend**: Next.js 14 with App Router
+- **Frontend**: Next.js 15 with App Router
 - **UI Components**: shadcn/ui with Tailwind CSS
 - **AI Integration**: AI SDK with Groq provider
 - **LLM Model**: Llama 3.1 70B (via Groq)
-- **Styling**: Tailwind CSS with custom medical theme
+- **Styling**: Tailwind CSS with a custom medical theme
 
-## Architecture
+## Architecture Overview
 
-### API Route (\`/api/chat/route.ts\`)
-- Handles chat requests using AI SDK's \`streamText\`
+### API Route (`/app/api/chat/route.ts`)
+- Handles chat requests using AI SDK's `streamText`
 - Implements medical knowledge search and retrieval
 - Applies safety-focused system prompts
 - Uses Groq for ultra-fast inference
 
-### Frontend (\`/app/page.tsx\`)
+### Frontend (`/app/page.tsx`)
 - React-based chat interface with real-time streaming
 - Feature-based navigation for different medical topics
 - Responsive design with medical-themed UI
@@ -63,36 +63,34 @@ A comprehensive medical information chatbot built with Next.js, AI SDK, and Groq
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+
 - Groq API key
 
 ### Installation
 
 1. Clone the repository:
-\`\`\`bash
-git clone <repository-url>
-cd medical-chatbot
-\`\`\`
+```bash
+git https://github.com/abdull6771/Complete-Medical-Chatbot-with-LLMs-LangChain-Pinecone.git
+cd Complete-Medical-Chatbot-with-LLMs-LangChain-Pinecone
+```
 
 2. Install dependencies:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 3. Set up environment variables:
-\`\`\`bash
-cp .env.example .env.local
-\`\`\`
 
-4. Add your Groq API key to \`.env.local\`:
-\`\`\`
+
+4. Add your Groq API key to `.env`:
+```
 GROQ_API_KEY=your_groq_api_key_here
-\`\`\`
+```
 
 5. Run the development server:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -105,10 +103,10 @@ npm run dev
 
 ### Feature Usage
 
-**Symptom Checker**: Describe symptoms like "I have a headache and feel tired"
-**Drug Information**: Ask about medications like "Tell me about ibuprofen side effects"
-**Disease Q&A**: Learn about conditions like "What is diabetes?"
-**Health Tips**: Get wellness advice like "How can I improve my heart health?"
+- **Symptom Checker**: Describe symptoms like "I have a headache and feel tired."
+- **Drug Information**: Ask about medications like "Tell me about ibuprofen side effects."
+- **Disease Q&A**: Learn about conditions like "What is diabetes?"
+- **Health Tips**: Get wellness advice like "How can I improve my heart health?"
 
 ### Safety Guidelines
 - Always consult healthcare professionals for medical concerns
@@ -119,7 +117,7 @@ npm run dev
 ## Extending the Application
 
 ### Adding New Medical Knowledge
-1. Update the \`medicalKnowledge\` object in \`/api/chat/route.ts\`
+1. Update the `medicalKnowledge` object in `/app/api/chat/route.ts`
 2. Add new categories (symptoms, drugs, conditions)
 3. Implement search logic for new categories
 
@@ -144,7 +142,7 @@ For production use, consider integrating with:
 
 ### Scalability
 - Add caching for common queries
-- Implement database for conversation history
+- Implement a database for conversation history
 - Use CDN for static assets
 - Monitor API usage and costs
 
@@ -160,7 +158,7 @@ For production use, consider integrating with:
 Handles chat messages and returns streaming responses.
 
 **Request Body:**
-\`\`\`json
+```json
 {
   "messages": [
     {
@@ -169,7 +167,7 @@ Handles chat messages and returns streaming responses.
     }
   ]
 }
-\`\`\`
+```
 
 **Response:**
 Streaming text response with medical information and appropriate disclaimers.
